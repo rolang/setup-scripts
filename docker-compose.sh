@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOCKER_COMPOSE_VERSION=$(curl --silent "https://api.github.com/repos/docker/compose/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+DOCKER_COMPOSE_VERSION=$(curl -s 'https://api.github.com/repos/docker/compose/releases/latest' | jq -r '.tag_name')
 
 echo "installing docker-compose version ${DOCKER_COMPOSE_VERSION}"
 
