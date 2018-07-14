@@ -2,8 +2,11 @@
 
 if [ -f .env ] ; then source .env; else source .env.default; fi
 
-wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-${JETBRAINS_TB_VERSION}.tar.gz
-tar xzvf jetbrains-toolbox-${JETBRAINS_TB_VERSION}.tar.gz
-mv jetbrains-toolbox-${JETBRAINS_TB_VERSION}/jetbrains-toolbox ~/jetbrains-toolbox
-rm -rf jetbrains-toolbox-*
-~/jetbrains-toolbox &
+JTB_LATEST=$(curl -s 'https://data.services.jetbrains.com/products/releases?code=TBA&latest=true' | jq ".TBA[0]")
+JTB_VERSION=$(jq -r ".version" <<< $JTB_LATEST).$(jq -r ".build" <<< $JTB_LATEST)
+JTB_DL_URL=$(jq -r ".downloads.linux.link" <<< $JTB_LATEST)
+
+curl -SL ${JTB_DL_URL} -o /tmp/jtb.tar.gz
+cd /tmp && tar xzvf jtb.tar.gz
+jetbrains-toolbox-${JTB_VERSION}/jetbrains-toolbox &
+rm -rf jtb*
