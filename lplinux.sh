@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 mkdir lplinux && cd lplinux
 wget https://lastpass.com/lplinux.tar.bz2
