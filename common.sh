@@ -13,8 +13,6 @@ sudo apt install \
     jq \
     openvpn \
     git \
-    gconf-service gconf-service-backend gconf2-common libgconf-2-4 \
-    libindicator3-7 libappindicator3-1 \
     -y 
 
 # git config
