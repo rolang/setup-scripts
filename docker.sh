@@ -8,4 +8,5 @@ sudo add-apt-repository \
    stable"
 
 sudo apt install docker-ce -y
+sudo groupadd docker && sudo usermod -aG docker $USER
 sudo docker run hello-world
