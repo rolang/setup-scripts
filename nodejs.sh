@@ -6,5 +6,4 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/${NVM_VERSION}/install
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-nvm install node && nvm use node
-npm install npm@latest -g
+nvm install node --latest-npm && nvm use node
