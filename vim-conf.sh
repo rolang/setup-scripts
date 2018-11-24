@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+set -e
+
+sudo apt install exuberant-ctags ncurses-term -y
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 declare -a langs=(
 "javascript"
