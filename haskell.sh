@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 GHC_VERSION=8.6.2
 CABAL_VERSION=2.4
 
