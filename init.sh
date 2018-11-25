@@ -13,7 +13,8 @@ sudo apt install \
     jq \
     openvpn \
     git \
-    -y 
+    exuberant-ctags ncurses-term \
+    -y
 
 # git config
 if [[ ! -z $GIT_USERNAME ]] ; then
