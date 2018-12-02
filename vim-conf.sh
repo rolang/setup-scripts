@@ -16,6 +16,7 @@ query=""
 for l in ${langs[@]}; do
     query+="langs=$l&"
 done
+query+="editor=vim"
 
 curl 'http://vim-bootstrap.com/generate.vim' --data $query > ~/.vimrc
 vim +PlugInstall +qall
