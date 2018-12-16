@@ -19,4 +19,6 @@ done
 query+="editor=vim"
 
 curl 'http://vim-bootstrap.com/generate.vim' --data $query > ~/.vimrc
+cp -f .vimrc.local ~/.vimrc.local
+
 vim +PlugInstall +qall
