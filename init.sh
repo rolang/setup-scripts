@@ -27,7 +27,7 @@ fi
 
 echo "git user configured to: $(git config --global --get user.email) / $(git config --global --get user.name)"
 
-LOCAL_BIN="~/.local/bin"
+LOCAL_BIN="${HOME}/.local/bin"
 if [ $(cat ~/.bashrc | grep -c "$LOCAL_BIN:\$PATH") -lt 1 ] ; then
 cat >> ~/.bashrc <<EOF
 export PATH="$LOCAL_BIN:\$PATH"
