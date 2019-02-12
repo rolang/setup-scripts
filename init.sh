@@ -13,7 +13,6 @@ sudo apt install \
     jq \
     openvpn \
     git \
-    exuberant-ctags ncurses-term \
     -y
 
 # git config
