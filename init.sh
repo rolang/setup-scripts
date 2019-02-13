@@ -13,6 +13,7 @@ sudo apt install \
     jq \
     openvpn \
     git \
+    build-essential \
     -y
 
 # git config
