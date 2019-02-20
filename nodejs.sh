@@ -7,3 +7,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 nvm install node --latest-npm && nvm use node
+npm i -g npm@latest
