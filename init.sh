@@ -4,7 +4,7 @@ if [ -f .env ] ; then source .env; else source .env.default; fi
 
 sudo apt remove -y vim-tiny
 
-sudo apt install \
+sudo apt update && sudo apt install \
     apt-transport-https \
     ca-certificates \
     curl \
