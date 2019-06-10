@@ -1,6 +1,6 @@
 !#/usr/bin/env bash
 
-sudo apt install libicu-dev libtinfo-dev libgmp-dev -y
+sudo apt install libicu-dev libtinfo-dev libgmp-dev zlib1g-dev -y
 
 if [ ! -z $(hie --numeric-version) ]; then
   echo "hie $(hie --numeric-version) already installed"
