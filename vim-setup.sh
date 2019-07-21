@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ./functions.sh
+
 SCRIPTS_DIR=$(pwd)
 VIMCONFIG=~/.vim
 MINPAC_PATH=$VIMCONFIG/pack/minpac/opt/minpac
@@ -27,9 +29,7 @@ else
   ~/.cargo/bin/cargo install ripgrep
 fi
 
-if [ $(cat ~/.bashrc | grep -c "export FZF_DEFAULT_COMMAND") -lt 1 ] ; then
-  echo "export FZF_DEFAULT_COMMAND=\"rg --files\"" >> ~/.bashrc
-fi
+add_to_bashrc "export FZF_DEFAULT_COMMAND=\"rg --files\""
 
 cp -f $SCRIPTS_DIR/.vimrc ~/.vimrc
 
