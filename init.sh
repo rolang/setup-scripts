@@ -2,6 +2,10 @@
 
 if [ -f .env ] ; then source .env; else source .env.default; fi
 
+add_to_bashrc() {
+  if [ $(cat ~/.bashrc | grep -c "$1") -lt 1 ]; then echo "$1" >> ~/.bashrc; fi
+}
+
 sudo apt remove -y vim-tiny
 
 sudo apt update && sudo apt install \
@@ -29,13 +33,12 @@ echo "git user configured to: $(git config --global --get user.email) / $(git co
 
 LOCAL_BIN="${HOME}/.local/bin"
 mkdir -p $LOCAL_BIN
-if [ $(cat ~/.bashrc | grep -c "$LOCAL_BIN:\$PATH") -lt 1 ] ; then
-cat >> ~/.bashrc <<EOF
-export PATH="$LOCAL_BIN:\$PATH"
-EOF
-fi
+add_to_bashrc "export PATH=\"$LOCAL_BIN:\$PATH\""
 
-echo "added ${LOCAL_BIN} to path"
+# https://github.com/microsoft/vscode/issues/48480#issuecomment-413793736
+if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+  add_to_bashrc "export GTK_IM_MODULE=xim"
+fi
 
 SETUP_SCRIPTS_DIR=${SETUP_SCRIPTS_DIR:-$HOME/setup-scripts}
 if [ ! -d ${SETUP_SCRIPTS_DIR} ]; then
