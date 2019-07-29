@@ -10,7 +10,6 @@ SCALA_HOME=~/.scala
 wget -O- https://downloads.lightbend.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz | tar xz -C ~/
 rm -rf $SCALA_HOME
 mv ~/scala-$SCALA_VERSION $SCALA_HOME
-
-add_to_bashrc "$SCALA_HOME/bin:\$PATH"
+ln -sf $SCALA_HOME/bin/* ~/.local/bin/
 
 echo "Scala $SCALA_VERSION installed in $SCALA_HOME"
