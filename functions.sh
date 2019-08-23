@@ -9,7 +9,7 @@ not_in_bashrc() {
 }
 
 add_to_bashrc() {
-  if not_in_bashrc $1; then
+  if not_in_bashrc "$1"; then
     echo "$1" >> ~/.bashrc
   fi
 }
