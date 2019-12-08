@@ -7,7 +7,7 @@ if [ ! -f "/etc/apt/sources.list.d/google-cloud-sdk.list" ]; then
 fi
 
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-sudo apt install google-cloud-sdk
+sudo apt update && sudo apt install google-cloud-sdk -y
 
 add_to_bashrc "source <(kubectl completion bash)"
 
