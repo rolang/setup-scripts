@@ -10,4 +10,4 @@ nnoremap <C-p> :<C-u>FZF<CR>
 
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
-
+set number
