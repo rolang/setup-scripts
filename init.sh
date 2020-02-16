@@ -18,7 +18,6 @@ sudo apt update && sudo apt install \
     openvpn \
     git \
     build-essential \
-    fish \
     -y
 
 # git config
