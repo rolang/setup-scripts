@@ -8,3 +8,4 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install node --latest-npm && nvm use node
 npm i -g npm@latest
+npm i -g yarn
