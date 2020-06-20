@@ -4,8 +4,8 @@ set -e
 
 # install clang
 CODE=$(lsb_release -cs)
-sudo add-apt-repository "deb http://apt.llvm.org/${CODE}/ llvm-toolchain-${CODE} main"
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+sudo add-apt-repository "deb http://apt.llvm.org/${CODE}/ llvm-toolchain-${CODE} main"
 sudo apt-get update && sudo apt-get install clang lldb lld rsync gdb -y
 
 # install cmake
