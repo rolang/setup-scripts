@@ -34,7 +34,6 @@ echo "git user configured to: $(git config --global --get user.email) / $(git co
 LOCAL_BIN="${HOME}/.local/bin"
 mkdir -p $LOCAL_BIN
 add_to_bashrc "export PATH=\"$LOCAL_BIN:\$PATH\""
-add_to_bashrc "fish"
 
 # https://github.com/microsoft/vscode/issues/48480#issuecomment-413793736
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
