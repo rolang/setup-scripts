@@ -6,7 +6,7 @@ set -e
 CODE=$(lsb_release -cs)
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
 sudo add-apt-repository "deb http://apt.llvm.org/${CODE}/ llvm-toolchain-${CODE} main"
-sudo apt-get update && sudo apt-get install clang lldb lld rsync gdb -y
+sudo apt-get update && sudo apt-get install unzip clang lldb lld rsync gdb -y
 
 # install cmake
 CMAKE_RELEASE=$(curl -s https://api.github.com/repos/Kitware/CMake/releases/latest | jq -r '.assets[] | select(contains({"browser_download_url": "Linux-x86_64.tar.gz"}))')
