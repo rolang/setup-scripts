@@ -16,7 +16,7 @@ mkdir -p ${CMAKE_RELEASE_DIR}
 
 if [ ! -f "${CMAKE_RELEASE_DIR}/bin/cmake" ] ; then
   echo "Downloading ${CMAKE_RELEASE_DOWNLOAD_URL}..."
-  curl -L ${CMAKE_RELEASE_DOWNLOAD_URL} | tar zx -C ${CMAKE_RELEASE_DIR}
+  curl -L ${CMAKE_RELEASE_DOWNLOAD_URL} | tar zx -C ${CMAKE_RELEASE_DIR}/..
 fi
 
 sudo ln -sf ${CMAKE_RELEASE_DIR}/bin/cmake /usr/bin/cmake
